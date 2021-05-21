@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Here is a list of your movies</h1>
+  <%= link_to "create new list", new_list_path %>
+  <div>
+    <%= @lists.each do |list|%>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(list.bookmarks.first.poster_url)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+    <% end %>
+  </div>
+
+</div>
